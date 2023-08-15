@@ -1,10 +1,19 @@
 <div class="navbar">
-<%= button_to "login",'/users/sign_in'%>
+<%= link_to "Ingresar",'/users/sign_in'%>
+<%= link_to "Editar usuario",'/users/edit'%>
 <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+
 </div>
 <p style="color: green"><%= notice %></p>
 
 <h1>FakeNews</h1>
+
+<p>INSTRUCCIONES</p>
+<p>!Importante! en el ejercicio se plantea que no debemos preocuparnos de la parte front-end y es por eso que tiene un diseño básico</p>
+<p> Cualquier persona que este registrada o no puede añadir comentarios, pero solo los "admin" pueden añadir y eliminar noticias y comentarios. Para crear un adminitrador usar rails c User.create email: 'pruebarubyrserra@gmail.com', password: 'admin1234', password_confirmation: 'admin1234', name:'Rick', lastname:'s', nickname: 'olp', role: 'admin';  </p>
+<p> Para probar el test de noticias escribir en consola rails t test/controllers/articles_controller_test.rb  </p> 
+<p> Usar 'pruebarubyrserra@gmail.com' para la prueba de enviar correo y ver por consola que se realiza el commit </p> 
+
 
 <div id="articles" class="pt-3">
   <% @articles.each do |article| %>
