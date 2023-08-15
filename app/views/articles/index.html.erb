@@ -1,0 +1,18 @@
+<div class="navbar">
+<%= button_to "login",'/users/sign_in'%>
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+</div>
+<p style="color: green"><%= notice %></p>
+
+<h1>FakeNews</h1>
+
+<div id="articles" class="pt-3">
+  <% @articles.each do |article| %>
+    <%= render article %>
+    <p>
+      <%= link_to "Show this article", article %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New article", new_article_path %>

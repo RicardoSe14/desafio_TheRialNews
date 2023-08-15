@@ -1,0 +1,9 @@
+<div>
+<% @comments.each do |comment| %>
+<p>
+<%= "@#{comment.user.nickname}" %>
+<%= comment.content %>
+  <%= button_to "Destroy this comment", comment, method: :delete %>
+</p>
+<% end %>
+</div>
